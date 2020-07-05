@@ -1,0 +1,1 @@
+Main-Class: com.tambola.app.TambolaApplication
