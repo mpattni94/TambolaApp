@@ -14,7 +14,7 @@ import org.powermock.modules.junit4.PowerMockRunner;
 import java.util.NoSuchElementFoundException;
 
 @RunWith(PowerMockRunner.class)
-public class GameUtilsTest{
+public class GameIdValidationUtilsTest{
   @InjectMocks
   GameIdValidationUtils gameIdValidationUtils;
   
