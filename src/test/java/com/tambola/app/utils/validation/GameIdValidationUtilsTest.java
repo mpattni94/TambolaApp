@@ -40,7 +40,7 @@ public class GameIdValidationUtilsTest{
     String gameId = "12345678";
     Mockito.when(repositoryUtils.retrieveGameObjectFromRedis(Matchers.anyString())).thenReturn(createGame());
     
-    Assert.assertTrue(gameIdValidationUtils.gameIdExists("12345678"));
+    Assert.assertTrue(gameIdValidationUtils.isGameValid("12345678"));
   }
   
   @Test
@@ -48,7 +48,7 @@ public class GameIdValidationUtilsTest{
     String gameId = "1234567";
     Mockito.when(repositoryUtils.retrieveGameObjectFromRedis(Matchers.anyString())).thenReturn(createGame());
     
-    Assert.assertFalse(gameIdValidationUtils.gameIdExists("12345678"));
+    Assert.assertFalse(gameIdValidationUtils.isGameValid("12345678"));
   }
   
   @Test
@@ -56,7 +56,7 @@ public class GameIdValidationUtilsTest{
     String gameId = "12345678";
     Mockito.when(repositoryUtils.retrieveGameObjectFromRedis(Matchers.anyString())).thenThrow(NoSuchElementFoundException.class);
     
-    Assert.assertFalse(gameIdValidationUtils.gameIdExists("12345678"));
+    Assert.assertFalse(gameIdValidationUtils.isGameValid("12345678"));
   }
   
   @Test
@@ -64,7 +64,7 @@ public class GameIdValidationUtilsTest{
     String gameId = "12345677";
     Mockito.when(repositoryUtils.retrieveGameObjectFromRedis(Matchers.anyString())).thenThrow(NoSuchElementFoundException.class);
     
-    Assert.assertFalse(gameIdValidationUtils.gameIdExists("12345678"));
+    Assert.assertFalse(gameIdValidationUtils.isGameValid("12345678"));
   }
   
   private Game createGame(){
