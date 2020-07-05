@@ -1,0 +1,36 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+  <head>
+    <title>Error</title>
+  </head>
+  <body>
+    <script>
+      function createTable(ticketArr){
+        var jsonArr = JSON.parse(ticketArr);
+        var table = document.createElement("table");
+        table.setAttribute('border', '1');
+        for(i in jsonArr){
+          var tr = table.inserRow(-1);
+          for(j in jsonArr[i]){
+            var tabCell = tr.insertCell(-1);
+            tabCell.setAttribute('width', '20');
+            if(jsonArr[i][j] == 0){
+              tabCell.innerHTML = "";
+            }else{
+              tabCell.innerHTML = jsonArr[i][j];
+            }
+          }
+        }
+        var tableContainer = document.getElementById("ticketTable");
+        tableContainer.innerHTML = "";
+        tableContainer.appendChild(table);
+      }
+    </script>
+    <div>
+      <div id="ticketTablke"></div>
+      <script th:inline="javascript">
+        createTable([[${tambolaTicket}]]);
+      </script>
+    </div>
+  </body>
+</html>
