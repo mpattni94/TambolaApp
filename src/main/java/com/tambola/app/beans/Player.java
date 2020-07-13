@@ -20,6 +20,6 @@ public class Player implements Serializable{
   }
   
   public void setTicket(Ticket ticket){
-    this.ticket = ticket
+    this.ticket = ticket;
   }
 }

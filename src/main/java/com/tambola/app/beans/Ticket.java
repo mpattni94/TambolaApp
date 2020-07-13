@@ -1,7 +1,7 @@
 package com.tambola.app.beans;
 
-import org.springframework.data.annotations.Id;
-import org.springframework.dataredis.core.RedisHash;
+import org.springframework.data.annotation.Id;
+import org.springframework.data.redis.core.RedisHash;
 
 import java.io.Serializable;
 
