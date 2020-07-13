@@ -1,6 +1,6 @@
 package com.tambola.app.beans;
 
-import org.springframework.data.annotations.Id;
+import org.springframework.data.annotation.Id;
 import org.springframework.data.redis.core.RedisHash;
 
 import java.io.Serializable;
@@ -22,7 +22,7 @@ public class Game implements Serializable{
     if(numbersDoneSoFar == null){
       numbersDoneSoFar = new HashSet<>();
     }
-    return numbersDoneSoFar
+    return numbersDoneSoFar;
   }
   
   public void setNumbersDoneSoFar(Set<String> numbersDoneSoFar){
@@ -49,7 +49,7 @@ public class Game implements Serializable{
     if(players == null){
       players = new ArrayList<>();
     }
-    players.add(player)
+    players.add(player);
   }
 
 }

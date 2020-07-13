@@ -1,8 +1,8 @@
 package com.tambola.app.utils.validation;
 
-import com.tambola.app.Game;
-import com.tambola.app.Ticket;
-import com.tambola.app.Player
+import com.tambola.app.beans.Game;
+import com.tambola.app.beans.Ticket;
+import com.tambola.app.beans.Player;
 import com.tambola.app.utils.redis.RepositoryUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
@@ -19,7 +19,7 @@ public class UserNameValidationUtils{
     boolean result = false;
     Game game;
     if(null != userName && userName.length() > 0){
-      game = repositoryUtils.retrieveGameObjectFromRedis(gameId);
+      game = repositoryUtils.retrieveGameFromRedis(gameId);
       List<Player> players = game.getPlayers();
       if(players != null){
         for(Player player: players){

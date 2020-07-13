@@ -1,7 +1,7 @@
 package com.tambola.app.utils.generator.ticket;
 
-import tambola.app.beans.Game;
-import tambola.app.constants.TicketConstants;
+import com.tambola.app.beans.Game;
+import com.tambola.app.constants.TicketConstants;
 import com.tambola.app.utils.redis.RepositoryUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
@@ -13,13 +13,13 @@ import java.util.Set;
 public class TicketNumberGenerator{
   
   @Autowired
-  RepositoryUtils repositoryUtils
+  RepositoryUtils repositoryUtils;
   
   Random random = new Random();
   
   public int generateRandomNumberForGameAndStore(String gameId){
     int number;
-    Game game = repositoryUtils.retrieveGameObjectFromRedis(gameId);
+    Game game = repositoryUtils.retrieveGameFromRedis(gameId);
     Set<String> numbersAlreadyDone = game.getNumbersDoneSoFar();
     if(numbersAlreadyDone.size() < TicketConstants.HIGHEST_VALUE_ALLOWED){
       do{

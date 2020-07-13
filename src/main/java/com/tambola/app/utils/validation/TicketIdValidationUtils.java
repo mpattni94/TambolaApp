@@ -1,4 +1,4 @@
-package com.tambla.app.utils.validation;
+package com.tambola.app.utils.validation;
 
 import com.tambola.app.beans.Ticket;
 import com.tambola.app.constants.TicketConstants;

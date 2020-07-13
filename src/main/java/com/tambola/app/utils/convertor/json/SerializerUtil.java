@@ -10,7 +10,7 @@ import java.io.IOException;
 @Component
 public class SerializerUtil{
 
-  private static ObjectMapper objectMapper;
+  private static ObjectMapper mapper;
   
   static{
     mapper = new ObjectMapper();

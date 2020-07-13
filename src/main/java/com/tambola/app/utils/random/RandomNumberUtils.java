@@ -1,6 +1,6 @@
 package com.tambola.app.utils.random;
 
-import com.tambola.app.GenericConstants;
+import com.tambola.app.constants.GenericConstants;
 import org.springframework.stereotype.Component;
 
 import java.util.Random;
@@ -17,7 +17,7 @@ public class RandomNumberUtils{
     StringBuilder sb = new StringBuilder();
     
     for(int i=0; i<stringLength; i++){
-       sb.append(GenericConstants.charArray{random.nextInt(GenericConstants.charArray.length)]);
+       sb.append(GenericConstants.charArray[random.nextInt(GenericConstants.charArray.length)]);
     }
     return sb.toString();
   }

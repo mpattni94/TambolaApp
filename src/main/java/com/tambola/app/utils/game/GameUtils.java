@@ -12,7 +12,7 @@ import java.io.IOException;
 import java.util.List;
 import java.util.Set;
 
-@Conponent
+@Component
 public class GameUtils{
 
   @Autowired
@@ -20,9 +20,9 @@ public class GameUtils{
   
   public String getNumbersDrawnSoFar(String gameId) throws IOException{
     String result;
-    Game game = repositoryUtils.retrieveGameObjectFromRedis(gameId);
-    Set<String> numbers = game.getNumbersDrawnSoFar();
-    if(!(numbers.size() > 0){
+    Game game = repositoryUtils.retrieveGameFromRedis(gameId);
+    Set<String> numbers = game.getNumbersDoneSoFar();
+    if(!(numbers.size() > 0)){
       result = ResultStrings.NO_NUMBERS_DRAWN_YET;
     }else{
       result = SerializerUtil.getJsonString(numbers);
@@ -32,7 +32,7 @@ public class GameUtils{
   
   public String getGameStats(String gameId) throws IOException{
     StringBuilder result = new StringBuilder();
-    Game game = repositoryUtils.retrieveGameObjectFromRedis(gameId);
+    Game game = repositoryUtils.retrieveGameFromRedis(gameId);
     
     String numbersDrawnSoFar = getNumbersDrawnSoFar(gameId);
     result.append("Numbers drawn in this game: " + numbersDrawnSoFar + "<br>");

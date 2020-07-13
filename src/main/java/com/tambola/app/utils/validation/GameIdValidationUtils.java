@@ -8,12 +8,13 @@ import org.springframework.stereotype.Component;
 
 import java.util.NoSuchElementException;
 
+@Component
 public class GameIdValidationUtils{
   @Autowired
   RepositoryUtils repositoryUtils;
   
   public boolean isGameValid(final String gameId){
-    return ((isLengthValid(gfameId) && gameIdExists(gameId));
+    return ((isLengthValid(gameId) && gameIdExists(gameId)));
   }
   
   public boolean isLengthValid(String gameId){
@@ -27,7 +28,7 @@ public class GameIdValidationUtils{
   public boolean gameIdExists(String gameId){
     boolean result = true;
     try{
-      Game game = repositoryUtils.retrieveGameObjectFromRedis(gameId);
+      Game game = repositoryUtils.retrieveGameFromRedis(gameId);
     }catch(NoSuchElementException e){
         result = false;
     }

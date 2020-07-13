@@ -1,9 +1,9 @@
 package com.tambola.app.utils.redis;
 
-import cm.tambola.app.beans.Game;
-import cm.tambola.app.beans.Ticket;
-import cm.tambola.app.repository.GameRepository;
-import cm.tambola.app.repository.TicketRepository;
+import com.tambola.app.beans.Game;
+import com.tambola.app.beans.Ticket;
+import com.tambola.app.repository.GameRepository;
+import com.tambola.app.repository.TicketRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
